@@ -1,5 +1,35 @@
 {
+    "version": "2.0.0",
     "tasks": [
+        {
+            "label": "Build SFML Project",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "${workspaceFolder}/first_test.cpp",
+                "-o",
+                "${workspaceFolder}/first_test",
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-system"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Build SFML C++ project"
+        },
+        {
+            "label": "Run SFML Project",
+            "type": "shell",
+            "command": "${workspaceFolder}/first_test",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
         {
             "type": "cppbuild",
             "label": "C/C++: g++ 활성 파일 빌드",
@@ -23,6 +53,5 @@
             },
             "detail": "디버거에서 생성된 작업입니다."
         }
-    ],
-    "version": "2.0.0"
+    ]
 }
