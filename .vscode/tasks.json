@@ -2,56 +2,19 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build SFML Project",
+            "label": "Build and Run C++ Project",
             "type": "shell",
-            "command": "g++",
+            "command": "/bin/bash",
             "args": [
-                "-std=c++17",
-                "${workspaceFolder}/first_test.cpp",
-                "-o",
-                "${workspaceFolder}/first_test",
-                "-lsfml-graphics",
-                "-lsfml-window",
-                "-lsfml-system"
-            ],
-            "group": "build",
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "detail": "Build SFML C++ project"
-        },
-        {
-            "label": "Run SFML Project",
-            "type": "shell",
-            "command": "${workspaceFolder}/first_test",
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            },
-            "problemMatcher": []
-        },
-        {
-            "type": "cppbuild",
-            "label": "C/C++: g++ 활성 파일 빌드",
-            "command": "/usr/bin/g++",
-            "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
+                "-c",
+                "g++ -std=c++17 ${workspaceFolder}/newGameStart/*.cpp -o ${workspaceFolder}/newGameStart/Main && ${workspaceFolder}/newGameStart/Main"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "디버거에서 생성된 작업입니다."
+            "problemMatcher": ["$gcc"],
+            "detail": "Build all cpp files in newGameStart folder and run the output"
         }
     ]
 }
